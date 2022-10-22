@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Report</title>
+</head>
+
+<body>
+
+    <style>
+
+        .image{
+            width:50%;
+        }
+
+        .image2{
+            width:50%;
+            height:400px;
+        }
+
+        body{
+            text-align:center;
+            background-color:skyblue;
+        }
+
+    </style>
+
+    <img class='image' alt="Logo Ilac" src="LOGOIlac.png">
+
+    <script>
+
+    var numOfCourses = parseInt(prompt("How many courses did you finish?", 0));
+
+    if (isNaN(numOfCourses) == true){
+        document.write("<h1>Invalid Input</h1>");
+    }
+
+    else{
+        console.log(numOfCourses);
+        var courseMarks = new Array();
+        let course = 0;
+
+        for (j=0; j<numOfCourses; j++){
+            course++;
+            courseMarks.push(Number(prompt("Enter your mark for course "+ course)));
+            console.log(courseMarks);
+        }
+
+        courseMarks.forEach((marks) => {document.write('<li>'+marks+'</li>')});
+    }
+    var total = 0;
+    courseMarks.forEach((mark)=> {total = total + mark});
+    var average = total/numOfCourses;
+
+    if (average > 90 && average <=100){
+        document.write("<h1>Your final average is </h1>" + '<h1>'+average.toFixed(2) +'</h1>'+ "<h1>. Your grade is A+.</h1>");
+    }
+
+    else{
+
+        if (average <=89 && average>=80){
+            document.write("<h1>Your final average is </h1>" + '<h1>' + average.toFixed(2) +'</h1>' + "<h1>. Your grade is B.</h1>");
+        }
+        if (average>=70 && average<=79){
+            document.write("<h1>Your final average is </h1>" + '<h1>' + average.toFixed(2) +'</h1>' + "<h1>. Your grade is C.</h1>");
+        }
+        if (average>=60 && average<=69){
+            document.write("<h1>Your final average is </h1>" + '<h1>' + average.toFixed(2) +'</h1>' + "<h1>. Your grade is D.</h1>");
+        }
+        if (average<60 && average >=0){
+            document.write("<h1>Your final average is </h1>" + '<h1>' + average.toFixed(2) +'</h1>' + "<h1>. Your grade is F.</h1>");
+        }
+        if (average>100 || average<0){
+            document.write("<h1>Sorry, all the marks have to be from minimum 0 to maximum 100!</h1>");
+        }
+    }
+
+    </script>
+
+    <footer>
+
+        <img class="image2" alt="Logo EFREI" src="LOGO.png">
+
+    </footer>
+
+</body>
+
+</html>
